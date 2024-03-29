@@ -1,4 +1,9 @@
-from .version import print_name_and_version
+import defopt
 
-def main():
-    print_name_and_version()
+def variant_stats():
+    pass
+
+def main(argv=None):
+    defopt.run({
+        "variant-stats": variant_stats}, argv=argv)
+    
