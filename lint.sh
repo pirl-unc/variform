@@ -10,6 +10,10 @@ set -o errexit
 find variform/ -name '*.py' \
   | xargs pylint \
   --errors-only \
-  --disable=unsubscriptable-object,not-an-iterable,no-member,invalid-unary-operand-type
-
-echo 'Passes pylint check'
+  --disable=unsubscriptable-object,not-an-iterable,no-member,invalid-unary-operand-type \
+&& \
+echo 'Passes pylint check' \
+&& \
+ruff check variform/ \
+&& \
+echo "Passes ruff check" 
