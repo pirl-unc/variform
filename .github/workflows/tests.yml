@@ -28,13 +28,10 @@ jobs:
           uv pip install pytest pytest-cov coveralls pylint ruff
           uv pip install -r requirements.txt
           uv pip install .
-      - name: Run default linting script
+      - name: Run linting script and unit tests
         run: |
           source .venv/bin/activate
           ./lint.sh
-      - name: Run unit tests
-        run: |
-          source .venv/bin/activate
           ./test.sh
       - name: Publish coverage to Coveralls
         uses: coverallsapp/github-action@v2.2.3
