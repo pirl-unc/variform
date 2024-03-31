@@ -19,10 +19,12 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
           cache: "pip"
-      - name: Install dependencies
+      - name: Create virtual environment and install dependencies
         run: |
           python -m pip install --upgrade pip
           python -m pip install uv
+          uv venv
+          source .venv/bin/activate
           uv pip install pytest pytest-cov coveralls pylint ruff
           uv pip install -r requirements.txt
           uv pip install .
