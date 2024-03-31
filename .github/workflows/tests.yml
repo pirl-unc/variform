@@ -22,7 +22,8 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          python -m pip install pytest pytest-cov coveralls pylint ruff uv
+          python -m pip uv
+          uv pip install pytest pytest-cov coveralls pylint ruff
           uv pip install -r requirements.txt
           uv pip install .
       - name: Run default linting script
