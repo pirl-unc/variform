@@ -1,12 +1,9 @@
-import defopt
+import argh 
 
-
-def variant_stats():
-    pass
 
 
 def main(argv=None):
     if isinstance(argv, str):
         argv = argv.split()
-
-    defopt.run({"variant-stats": variant_stats}, argv=argv)
+    argh.dispatch_command(lambda: None, argv=argv, output_file=None)
+    
