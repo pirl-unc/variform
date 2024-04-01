@@ -1,0 +1,8 @@
+site_name: Variform documentation
+
+theme:
+  name: "material"
+
+plugins:
+  - search
+  - mkdocstrings
